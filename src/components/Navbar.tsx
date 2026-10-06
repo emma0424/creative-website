@@ -1,36 +1,22 @@
 import React from 'react';
 
-const navLinks = [
-  { label: 'Platform', href: '#platform' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Customers', href: '#customers' },
-  { label: 'Resources', href: '#resources' },
+const links = [
+  { label: 'The details', href: '#the-details' },
 ];
 
-export const Navbar: React.FC = () => {
-  return (
-    <header className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 md:px-16 py-6 md:py-8 flex items-center justify-between z-20 relative">
-      {/* Brand: keel mark + wordmark */}
-      <div className="flex items-center">
-        <a href="#" className="flex items-center gap-2.5 select-none hover:opacity-95 transition-opacity" aria-label="Keelway Home">
-          <svg viewBox="0 0 28 28" className="w-7 h-7 md:w-[30px] md:h-[30px] shrink-0" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Keelway">
-            {/* Keel / sail cutting upward — steady forward motion */}
-            <rect width="28" height="28" rx="8" fill="#1D68FF" />
-            <path d="M 14 6.2 L 21.6 21.8 L 14 18 L 6.4 21.8 Z" fill="#FFFFFF" />
-          </svg>
-          <span className="text-[#0A0D14] text-2xl md:text-[25px] font-extrabold tracking-[-0.02em]">Keelway</span>
-        </a>
-      </div>
-      {/* Center Nav Links */}
-      <nav className="hidden md:flex items-center gap-9 lg:gap-11">
-        {navLinks.map((link) => (
-          <a key={link.label} href={link.href} className="text-[#1E293B] text-[15px] font-[500] hover:text-[#1D68FF] transition-colors duration-150">{link.label}</a>
+export const Navbar: React.FC = () => (
+  <header className="relative z-20 border-b border-zinc-100 bg-white/90 backdrop-blur">
+    <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
+      <a href="#top" aria-label="Super G home" className="flex items-center gap-3">
+        <span aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-950 text-lg font-black text-white">G</span>
+        <span className="text-sm font-extrabold tracking-[0.18em] text-zinc-950">SUPER G</span>
+      </a>
+      <nav aria-label="Main navigation" className="hidden items-center gap-9 sm:flex">
+        {links.map((link) => (
+          <a key={link.href} href={link.href} className="text-sm font-medium text-zinc-600 transition hover:text-zinc-950">{link.label}</a>
         ))}
       </nav>
-      {/* Right CTA Button */}
-      <div className="flex items-center">
-        <button type="button" className="bg-[#0A0D14] hover:bg-[#1E293B] active:scale-[0.98] text-white text-[14px] md:text-[15px] font-[500] px-5 sm:px-6 py-2.5 rounded-[10px] transition-all duration-200 shadow-sm cursor-pointer">Book a demo</button>
-      </div>
-    </header>
-  );
-};
+      <a href="#the-details" className="rounded-full border border-zinc-300 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-zinc-900 transition hover:border-zinc-950 hover:bg-zinc-950 hover:text-white focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2">Explore</a>
+    </div>
+  </header>
+);

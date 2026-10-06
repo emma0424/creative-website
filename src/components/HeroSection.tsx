@@ -1,40 +1,95 @@
 import React from 'react';
 
-// Overlapping customer avatars for the social-proof badge
-const avatars = [
-  { name: "Keelway customer 1", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" },
-  { name: "Keelway customer 2", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" },
-  { name: "Keelway customer 3", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" }
+const details = [
+  {
+    number: '01',
+    title: 'Comfort, built into the everyday',
+    copy: 'An easy, comfortable layer for slow mornings, campus days, and everything after.',
+  },
+  {
+    number: '02',
+    title: 'Sleek from every angle',
+    copy: 'A clean black silhouette and a bold embroidered G make a simple outfit feel considered.',
+  },
+  {
+    number: '03',
+    title: 'Your go-to, on repeat',
+    copy: 'Throw it on with denim, joggers, or your favorite everyday essentials.',
+  },
 ];
 
-export const HeroSection: React.FC = () => {
-  return (
-    <section className="relative w-full flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 pt-3 sm:pt-6 md:pt-8 pb-12 md:pb-24 z-10 select-none">
-      {/* 1. Social Proof Badge */}
-      <div className="mb-6 sm:mb-8 inline-flex items-center gap-2.5 bg-[#EEF2F6] hover:bg-[#E4E9F0] transition-colors px-3 py-1.5 rounded-full shadow-[0_1px_2px_rgba(0,0,0,0.04)] border border-[#E2E8F0]/80 cursor-default">
-        {/* Overlapping Micro-Avatars */}
-        <div className="flex items-center -space-x-2 pl-0.5">
-          {avatars.map((avatar, index) => (
-            <img key={index} src={avatar.image} alt={avatar.name} className="w-6 h-6 rounded-full object-cover border-2 border-white ring-0 shadow-xs" loading="lazy" />
-          ))}
+export const HeroSection: React.FC = () => (
+  <>
+    <main>
+      <section className="relative mx-auto grid min-h-[calc(100svh-88px)] max-w-7xl items-center gap-8 px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:px-12 lg:pb-20 lg:pt-8">
+        <div className="relative z-10 order-2 max-w-xl lg:order-1">
+          <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.24em] text-zinc-500">
+            <span className="h-px w-8 bg-zinc-400" /> The everyday icon
+          </p>
+          <h1 className="text-5xl font-extrabold leading-[0.98] tracking-[-0.065em] text-zinc-950 sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+            Black Super <span className="inline-block">G</span> Hoodie<span className="text-[#4285F4]">.</span>
+          </h1>
+          <p className="mt-7 max-w-lg text-lg leading-8 text-zinc-600 sm:text-xl">
+            Comfortable and sleek, made for day-to-day use. Meet the layer that makes getting dressed feel effortless.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold text-zinc-700">
+            <span className="rounded-full border border-zinc-200 bg-white px-4 py-2">Everyday comfort</span>
+            <span className="rounded-full border border-zinc-200 bg-white px-4 py-2">Clean, easy style</span>
+          </div>
+          <a href="#the-details" className="group mt-10 inline-flex items-center gap-4 rounded-full bg-zinc-950 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-zinc-950/10 transition hover:-translate-y-0.5 hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2">
+            Meet your new favorite
+            <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-1">→</span>
+          </a>
+          <p className="mt-4 text-xs tracking-wide text-zinc-400">A comfortable layer. A sharper everyday look.</p>
         </div>
-        {/* Badge Text */}
-        <span className="text-[13.5px] sm:text-[14px] font-[500] text-[#334155] tracking-tight pr-1.5">Loved by 1,200+ agency teams</span>
-      </div>
-      {/* 2. Main Hero Headline */}
-      <h1 className="max-w-[1050px] mx-auto text-[44px] sm:text-[58px] md:text-[70px] lg:text-[78px] font-[800] tracking-[-0.035em] leading-[1.08] sm:leading-[1.05] mb-5 sm:mb-6">
-        <span className="text-[#1E2433] block">Stop Running Your Agency</span>
-        <span className="text-[#1D68FF] block mt-1 sm:mt-1.5">On Twelve Browser Tabs</span>
-      </h1>
-      {/* 3. Subheading Description */}
-      <p className="max-w-[680px] mx-auto text-[#4B5563] text-base sm:text-lg md:text-[19px] font-[400] leading-[1.55] sm:leading-[1.6] tracking-[-0.01em] mb-8 sm:mb-10 px-4">
-        Invoicing, onboarding, client CRM, team ops and commission tracking,
-        <span className="block sm:inline"> finally under one roof — and finally talking to each other.</span>
-      </p>
-      {/* 4. Primary CTA Button */}
-      <div className="flex items-center justify-center">
-        <button type="button" className="bg-[#0A0D14] hover:bg-[#1E293B] active:scale-[0.98] text-white text-[15px] sm:text-[16px] font-[500] px-7 sm:px-8 py-3.5 sm:py-4 rounded-[12px] shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer">Start free — no card needed</button>
-      </div>
-    </section>
-  );
-};
+
+        <div className="relative order-1 mx-auto w-full max-w-[620px] lg:order-2">
+          <div className="absolute -right-2 top-10 h-24 w-24 rounded-full bg-[#FBBC05]/20 blur-2xl sm:right-8" />
+          <div className="absolute -bottom-2 left-4 h-32 w-32 rounded-full bg-[#34A853]/15 blur-3xl sm:left-12" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-zinc-100 bg-white shadow-[0_30px_90px_-45px_rgba(24,24,27,0.28)]">
+            <img
+              src="/creative-website/black-super-g-hoodie.png"
+              alt="Black Super G Hoodie with a bold multicolor embroidered G logo on the chest"
+              className="aspect-square w-full object-cover"
+              fetchPriority="high"
+            />
+            <div className="absolute bottom-5 left-5 rounded-full border border-white/70 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-700 shadow-sm backdrop-blur sm:bottom-7 sm:left-7">
+              Comfort meets clean style
+            </div>
+          </div>
+          <div aria-hidden="true" className="absolute -right-3 top-1/3 hidden h-14 w-14 items-center justify-center rounded-full bg-zinc-950 text-xl font-black text-white shadow-xl sm:flex">G</div>
+        </div>
+      </section>
+
+      <section id="the-details" className="scroll-mt-8 border-y border-zinc-200 bg-[#f7f7f5]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+          <div className="mb-11 flex flex-col justify-between gap-5 sm:mb-14 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-zinc-500">Why you’ll wear it</p>
+              <h2 className="max-w-2xl text-3xl font-bold tracking-[-0.05em] text-zinc-950 sm:text-4xl">One easy choice. Every day.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-zinc-500">The Black Super G Hoodie brings comfort and a sleek, versatile look into your daily rotation.</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {details.map((item) => (
+              <article key={item.number} className="rounded-2xl border border-zinc-200/80 bg-white p-6 sm:p-7">
+                <p className="mb-8 text-xs font-bold tracking-[0.18em] text-zinc-400">{item.number}</p>
+                <h3 className="text-xl font-bold tracking-tight text-zinc-950">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-600">{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col items-start justify-between gap-5 rounded-2xl bg-zinc-950 px-6 py-7 text-white sm:flex-row sm:items-center sm:px-9 sm:py-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-400">Black Super G Hoodie</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight">Make comfort your everyday uniform.</p>
+            </div>
+            <a href="#top" className="inline-flex shrink-0 items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-zinc-950">
+              Back to the hoodie <span aria-hidden="true">↑</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </>
+);
