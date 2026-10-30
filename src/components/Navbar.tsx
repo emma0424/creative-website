@@ -1,13 +1,13 @@
 import React from 'react';
 
 const links = [
+  { label: 'Pricing', href: '#pricing' },
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Benefits', href: '#benefits' },
-  { label: 'Who it’s for', href: '#who-its-for' },
 ];
 
 export const Navbar: React.FC = () => (
-  <header className="sticky top-0 z-20 border-b border-[#e5e3da] bg-[#f8f7f2]/90 backdrop-blur-md">
+  <header className="sticky top-0 z-20 border-b border-[#e5e3da] bg-[#f8f7f2]/95 backdrop-blur-md">
     <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
       <a href="#top" aria-label="Outfit Hanger home" className="flex items-center gap-3">
         <span aria-hidden="true" className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#26352b] text-white">
@@ -17,10 +17,10 @@ export const Navbar: React.FC = () => (
         </span>
         <span className="text-xs font-extrabold tracking-[0.13em] text-[#26352b] sm:text-sm">OUTFIT HANGER</span>
       </a>
-      <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
+      <nav aria-label="Main navigation" className="hidden items-center gap-3 sm:flex sm:gap-5 lg:gap-7">
         {links.map((link) => <a key={link.href} href={link.href} className="text-sm font-medium text-[#5e685f] transition hover:text-[#26352b]">{link.label}</a>)}
       </nav>
-      <a href="#how-it-works" className="rounded-full border border-[#b9c2b5] px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#26352b] transition hover:border-[#26352b] hover:bg-[#26352b] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#26352b] focus:ring-offset-2 sm:px-5 sm:text-xs">Get outfit-ready</a>
+      <a href="#pricing" className="rounded-full border border-[#b9c2b5] px-3 py-2.5 text-[9px] font-bold uppercase tracking-[0.08em] text-[#26352b] transition hover:border-[#26352b] hover:bg-[#26352b] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#26352b] focus:ring-offset-2 sm:px-5 sm:text-xs sm:tracking-[0.12em]">View price</a>
     </div>
   </header>
 );

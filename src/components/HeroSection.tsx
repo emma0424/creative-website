@@ -61,6 +61,9 @@ export const HeroSection: React.FC = () => {
             <span className="rounded-full bg-[#e8ece4] px-4 py-2.5">Made for busy days</span>
           </div>
           <div className="mt-9 flex flex-wrap items-center gap-5">
+            <a href="#pricing" className="group inline-flex items-center gap-4 rounded-full bg-[#26352b] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#26352b]/15 transition hover:-translate-y-0.5 hover:bg-[#394b3d] focus:outline-none focus:ring-2 focus:ring-[#26352b] focus:ring-offset-2">
+              View pricing <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
             <a href="#how-it-works" className="group inline-flex items-center gap-4 rounded-full bg-[#26352b] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#26352b]/15 transition hover:-translate-y-0.5 hover:bg-[#394b3d] focus:outline-none focus:ring-2 focus:ring-[#26352b] focus:ring-offset-2">
               See how it works
               <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-1">→</span>
