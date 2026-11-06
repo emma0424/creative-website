@@ -1,4 +1,5 @@
 import React from 'react';
+const InteractiveHanger = React.lazy(() => import('./InteractiveHanger').then(({ InteractiveHanger: Component }) => ({ default: Component })));
 
 const routines = [
   {
@@ -73,25 +74,12 @@ export const HeroSection: React.FC = () => {
           <p className="mt-5 text-xs tracking-wide text-[#7b847d]">One hanger. Your whole outfit. A calmer start.</p>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[620px]">
+        <div className="relative mx-auto w-full max-w-[700px]">
           <div aria-hidden="true" className="absolute -right-3 top-10 h-32 w-32 rounded-full bg-[#dbe4d5] blur-3xl sm:right-5" />
-          <div aria-hidden="true" className="absolute -bottom-5 left-0 h-36 w-36 rounded-full bg-[#efe4d0] blur-3xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-[#e4e2d9] bg-[#f2eee5] shadow-[0_30px_90px_-45px_rgba(38,53,43,0.35)]">
-            <img
-              src="/creative-website/outfit-hanger-product.webp"
-              alt="The Outfit Hanger holding a shirt, pants, a pair of socks, and a belt together"
-              className="aspect-[4/5] w-full object-cover"
-              fetchPriority="high"
-            />
-            <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/90 px-4 py-3 shadow-md backdrop-blur sm:bottom-7 sm:left-7">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8ece4] text-[#465b49]" aria-hidden="true">✓</span>
-              <span>
-                <span className="block text-[10px] font-bold uppercase tracking-[0.16em] text-[#778177]">Outfit ready</span>
-                <span className="mt-0.5 block text-sm font-semibold text-[#26352b]">Everything in one place</span>
-              </span>
-            </div>
-          </div>
-          <div aria-hidden="true" className="absolute -right-3 top-1/4 hidden rounded-full border border-[#d8ddd3] bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#617261] shadow-md sm:block">Shirt · pants · more</div>
+          <div aria-hidden="true" className="absolute -bottom-5 left-0 h-36 w-36 rounded-full bg-[#e9def0] blur-3xl" />
+          <React.Suspense fallback={<div className="flex min-h-[320px] items-center justify-center rounded-[1.75rem] border border-[#e4e2d9] bg-[#f2eee7] text-sm font-medium text-[#657264] sm:min-h-[430px]" role="status">Preparing the 3D hanger…</div>}>
+            <InteractiveHanger />
+          </React.Suspense>
         </div>
       </section>
 

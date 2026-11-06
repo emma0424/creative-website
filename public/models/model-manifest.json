@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectName": "Outfit Hanger",
+  "modelName": "Outfit Hanger",
+  "modelType": "hanger",
+  "confirmedAt": "2026-11-03T20:32:22.588Z",
+  "dimensions": {
+    "width": 44,
+    "height": 25,
+    "depth": 4,
+    "units": "cm"
+  },
+  "preferredCamera": {
+    "type": "perspective",
+    "position": [
+      56,
+      42.00000000000001,
+      84.00000000000001
+    ],
+    "target": [
+      0,
+      12,
+      0
+    ]
+  },
+  "presentation": {
+    "background": "#f7f5f1",
+    "lighting": "soft"
+  },
+  "description": "A standard-size pastel hanger with a lower bar, two trouser or skirt clips, and accessory hooks.",
+  "features": [
+    {
+      "name": "Lower trouser/skirt clips",
+      "description": "Two adjustable metallic clips on the hanger crossbar."
+    },
+    {
+      "name": "Accessory hooks",
+      "description": "Small end hooks for accessories."
+    }
+  ],
+  "files": {
+    "model": "model.glb",
+    "project": "project.json",
+    "preview": "preview.png",
+    "manifest": "model-manifest.json"
+  },
+  "integrity": {
+    "modelSha256": "6ad27dd2d3da05457a1a368c48ee0a9cfd3e580b7a9ef718e609460abdf9795f"
+  }
+}
